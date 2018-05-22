@@ -10,13 +10,13 @@ Store.create(name:'Surrey',annual_revenue:224000,mens_apparel:false,womens_appar
 Store.create(name:'Whistler',annual_revenue:1900000,mens_apparel:true,womens_apparel:false)
 Store.create(name:'Yaletown',annual_revenue:430000,mens_apparel:true,womens_apparel:false)
 
-# @mens_store = Store.where("mens_apparel = true")
+@mens_store = Store.where("mens_apparel = true")
 
-# @mens_store.each do |store|
-#   puts "Name: #{store.name} | Annual Revenue: #{store.annual_revenue}"
-# end
+@mens_store.each do |store|
+  puts "Name: #{store.name} | Annual Revenue: #{store.annual_revenue}"
+end
 
-@womens_store = Store.where("womens_apparel = true")
+@womens_store = Store.where("womens_apparel = true AND annual_revenue <= 1000000 ")
 
 @womens_store.each do |store|
   puts "Name: #{store.name} | Annual Revenue: #{store.annual_revenue}"
